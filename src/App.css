@@ -1,38 +1,20 @@
-.App {
-  text-align: center;
+/** @format */
+.login-form-container {
+  width: 70rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-page-container {
+  height: 67.5rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.AppHarvest-logo-style {
+  height: 7rem;
+  width: 7rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.image-background-color {
+  background-color: #000;
 }
-
-.App-link {
-  color: #61dafb;
+.image-styling {
+  opacity: 0.9;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-position {
+  top: 4rem;
 }
