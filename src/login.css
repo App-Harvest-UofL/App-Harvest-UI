@@ -1,0 +1,20 @@
+/** @format */
+.login-form-container {
+  width: 70rem;
+}
+.login-page-container {
+  height: 67.5rem;
+}
+.AppHarvest-logo-style {
+  height: 7rem;
+  width: 7rem;
+}
+.image-background-color {
+  background-color: #000;
+}
+.image-styling {
+  opacity: 0.9;
+}
+.text-position {
+  top: 4rem;
+}
