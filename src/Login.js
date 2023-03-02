@@ -5,6 +5,7 @@ function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   var authenticated = false;
+  
 
   function handleUsernameChange(event) {
     setUsername(event.target.value);
@@ -43,11 +44,12 @@ function LoginForm() {
     console.error(error);
   });
   if (authenticated) {
-      return (
-        <div>
-          <p>Welcome to your Dashboard</p>
-        </div>
-      );
+    return (
+      
+    <div>
+      <p>Welcome to your Dashboard</p>
+    </div>
+    );
     }
   }
 
