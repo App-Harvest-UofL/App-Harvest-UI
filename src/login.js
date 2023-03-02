@@ -16,24 +16,30 @@ export const LoginPage = () => {
           <div className='d-flex w-100 justify-content-center'>
             <h1>Welcome Back</h1>
           </div>
-          <input
-            className='input-style mt-2 mb-2'
-            type='email'
-            placeholder='email'
-          ></input>
-          <input
-            className='input-style mt-2 mb-2'
-            type='password'
-            placeholder='password'
-          ></input>
-          <button className='login-button-style' type='submit'>
-            Login{' '}
-            <img
-              className='right-arrow-style'
-              src='arrow-right-solid.svg'
-              alt='right arrow shaped image'
-            />
-          </button>
+          <div className='d-flex justify-content-center'>
+            <input
+              className='input-style mt-2 mb-2'
+              type='email'
+              placeholder='email'
+            ></input>
+          </div>
+          <div className='d-flex justify-content-center'>
+            <input
+              className='input-style mt-2 mb-2'
+              type='password'
+              placeholder='password'
+            ></input>
+          </div>
+          <div className='d-flex justify-content-center'>
+            <button className='login-button-style' type='submit'>
+              Login{' '}
+              <img
+                className='right-arrow-style'
+                src='arrow-right-solid.svg'
+                alt='right arrow shaped image'
+              />
+            </button>
+          </div>
         </div>
       </div>
       <div className='image-background-color'>
