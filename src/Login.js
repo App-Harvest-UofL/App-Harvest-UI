@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
+import { Navigate } from "react-router-dom";
 
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  var authenticated = false;
 
   function handleUsernameChange(event) {
     setUsername(event.target.value);
@@ -11,7 +13,6 @@ function LoginForm() {
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
-
   function handleSubmit(event) {
     event.preventDefault();
     fetch('http://localhost:5164/login', {
@@ -25,10 +26,12 @@ function LoginForm() {
     })
   })
   .then(response => response.json())
-  .then(data => {
-    if (data.success) {
+  .then((data) => {
+    if (data === true) {
+        authenticated = true; 
         // Show success message to user
-        document.getElementById('message').innerHTML = 'Login successful!';
+        // document.getElementById('message').innerHTML = 'Login successful!';
+        console.log("worked");
       } else {
         // Show error message to user
         document.getElementById('message').innerHTML = 'Login failed. Please check your credentials.';
@@ -39,6 +42,13 @@ function LoginForm() {
     // Handle any errors that occurred during the fetch call
     console.error(error);
   });
+  if (authenticated) {
+      return (
+        <div>
+          <p>Welcome to your Dashboard</p>
+        </div>
+      );
+    }
   }
 
   return (
