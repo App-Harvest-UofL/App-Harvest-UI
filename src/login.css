@@ -18,3 +18,27 @@
 .text-position {
   top: 4rem;
 }
+.login-inputs-container {
+  border-style: solid;
+  border-radius: 3.125rem;
+  border-color: #00ac50;
+  border-width: 3px;
+  width: 550px;
+  height: 660px;
+}
+.input-style {
+}
+.right-arrow-style {
+  height: 2rem;
+  width: 2rem;
+}
+.login-button-style {
+  background-color: #fff;
+  border-radius: 3.125rem;
+  border-color: #00ac50;
+  border-width: 3px;
+  width: 420px;
+  height: 75px;
+  font-size: 2.5rem;
+  color: #00ac50;
+}

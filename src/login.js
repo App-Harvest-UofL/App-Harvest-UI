@@ -3,13 +3,38 @@ import './login.css';
 
 export const LoginPage = () => {
   return (
-    <div className='d-flex justify-content-row login-page-container'>
-      <div className='login-form-container'>
-        <img
-          className='AppHarvest-logo-style d-flex w-100 mt-5 justify-content-center'
-          src='AppHarvest-logo.svg'
-          alt='AppHarvest logo in black'
-        ></img>
+    <div className='d-flex flex-row login-page-container'>
+      <div className='login-form-container d-flex flex-column'>
+        <div className=''>
+          <img
+            className='AppHarvest-logo-style d-flex w-100 mt-5 justify-content-center'
+            src='AppHarvest-logo.svg'
+            alt='AppHarvest logo in black'
+          ></img>
+        </div>
+        <div className='d-flex flex-column mt-5 login-inputs-container'>
+          <div className='d-flex w-100 justify-content-center'>
+            <h1>Welcome Back</h1>
+          </div>
+          <input
+            className='input-style mt-2 mb-2'
+            type='email'
+            placeholder='email'
+          ></input>
+          <input
+            className='input-style mt-2 mb-2'
+            type='password'
+            placeholder='password'
+          ></input>
+          <button className='login-button-style' type='submit'>
+            Login{' '}
+            <img
+              className='right-arrow-style'
+              src='arrow-right-solid.svg'
+              alt='right arrow shaped image'
+            />
+          </button>
+        </div>
       </div>
       <div className='image-background-color'>
         <img
