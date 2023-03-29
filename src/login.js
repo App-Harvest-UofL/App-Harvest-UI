@@ -1,9 +1,7 @@
-/** @format */
-import './login.css';
 import React, {  useState } from 'react';
 import { Navigate } from "react-router-dom";
 
-function LoginPage() {
+function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   var authenticated = false;
@@ -25,7 +23,7 @@ function LoginPage() {
     },
     body: JSON.stringify({
       username: username,
-      gpassword: password
+      password: password
     })
   })
   .then(response => response.json())
@@ -72,23 +70,4 @@ function LoginPage() {
   );
 }
 
-export const LoginPage = () => {
-  return (
-    <div className='d-flex justify-content-row login-page-container'>
-      <div className='login-form-container'>
-        <img
-          className='AppHarvest-logo-style d-flex w-100 mt-5 justify-content-center'
-          src='AppHarvest-logo.svg'
-          alt='AppHarvest logo in black'
-        ></img>
-      </div>
-      <div className='image-background-color'>
-        <img
-          className='w-100 h-100 image-styling'
-          src='AppHarvest-Foundation-image.jpg'
-          alt='AppHarvest foundation crate image'
-        ></img>
-      </div>
-    </div>
-  );
-};
+export default LoginForm
