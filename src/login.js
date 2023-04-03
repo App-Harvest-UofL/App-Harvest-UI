@@ -1,8 +1,13 @@
 /** @format */
 import './login.css';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
+import { AuthContext } from './context/AuthProvider';
+import axios from './API Pull/axios';
+
+const Login = () => './auth';
 
 export const LoginPage = () => {
+  const { setUser } = useContext(AuthContext);
   const emailRef = useRef();
   const errorRef = useRef();
 
@@ -21,10 +26,35 @@ export const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
-    setEmail('');
-    setPassword('');
-    setLoggedIn(true);
+
+    try {
+      const response = await axios.post(
+        Login,
+        JSON.stringify({ email, password }),
+        {
+          headers: { 'Content-Type': 'application/json' },
+          withCredentials: true,
+        }
+      );
+      console.log(JSON.stringify(response?.data));
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles;
+      setUser({ email, password, accessToken });
+      console.log(email, password);
+      setEmail('');
+      setPassword('');
+      setLoggedIn(true);
+    } catch (err) {
+      if (!err?.response) {
+        setError('No server response');
+      } else if (err.response?.statuse == 400) {
+        setError('Invalid email or password.');
+      } else if (err.response?.status == 401) {
+        setError('Unauthorized');
+      } else {
+        setError('Something went wrong. Please try again later.');
+      }
+    }
   };
 
   return (
