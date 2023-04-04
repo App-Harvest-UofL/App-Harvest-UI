@@ -3,11 +3,13 @@ import '../login.css';
 import { useState, useRef, useEffect, useContext } from 'react';
 import AuthContext from '../context/AuthProvider';
 import axios from '../API Pull/axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const { setUser } = useContext(AuthContext);
   const emailRef = useRef();
   const errorRef = useRef();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -60,10 +62,7 @@ const LoginPage = () => {
   return (
     <>
       {loggedIn ? (
-        // <Routes>
-        //   <Route path='/contentPage' component={contentPage} />
-        // </Routes>
-        <div>success</div>
+        navigate('/contentPage')
       ) : (
         <div className='d-flex flex-row login-page-container'>
           <div className='login-form-container d-flex flex-column'>
