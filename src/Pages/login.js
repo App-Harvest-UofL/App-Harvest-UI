@@ -60,7 +60,10 @@ const LoginPage = () => {
   return (
     <>
       {loggedIn ? (
-        <div>sucess</div>
+        // <Routes>
+        //   <Route path='/contentPage' component={contentPage} />
+        // </Routes>
+        <div>success</div>
       ) : (
         <div className='d-flex flex-row login-page-container'>
           <div className='login-form-container d-flex flex-column'>
