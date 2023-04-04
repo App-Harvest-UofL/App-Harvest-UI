@@ -28,7 +28,7 @@ export const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await   axios({
+      const response = await axios({
         method: 'post',
         url: '/login',
         data: {
