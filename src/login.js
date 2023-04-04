@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useContext } from 'react';
 import AuthContext from './context/AuthProvider';
 import axios from './API Pull/axios';
 
-const Login = () => './auth';
+const Login = () => 'http://localhost:5164/login';
 
 export const LoginPage = () => {
   const { setUser } = useContext(AuthContext);
@@ -28,14 +28,14 @@ export const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        Login,
-        JSON.stringify({ email, password }),
-        {
-          headers: { 'Content-Type': 'application/json' },
-          withCredentials: true,
-        }
-      );
+      const response = await   axios({
+        method: 'post',
+        url: '/login',
+        data: {
+        email: email,
+        password: password
+       }
+      });
       console.log(JSON.stringify(response?.data));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
