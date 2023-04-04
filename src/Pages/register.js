@@ -3,7 +3,10 @@
 import React, { useState } from 'react';
 import axios from '../API Pull/axios';
 
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 function RegisterPage() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     name: '',
@@ -17,6 +20,7 @@ function RegisterPage() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+
   };
 
   const handleSubmit = async (event) => {
