@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useContext } from 'react';
 import AuthContext from './context/AuthProvider';
 import axios from './API Pull/axios';
 
-const Login = () => 'http://localhost:5164/login';
+
 
 export const LoginPage = () => {
   const { setUser } = useContext(AuthContext);
