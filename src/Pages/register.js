@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState } from 'react';
+import axios from '../API Pull/axios';
 
 function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -11,14 +12,37 @@ function RegisterPage() {
     confirmPassword: '',
   });
 
+  const [error, setError] = useState('');
+  const [userCreated, setUserCreated] = useState(false);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // handle registration logic here
+    try {
+      const response = await axios({
+        method: 'post',
+        url:'/About/CreateUser',
+        data: {
+          email: formData.email,
+          name: formData.name,
+          ContentCodes: "basic",
+          password: formData.password
+        }
+      })
+    }catch (err) {
+      if (!err?.response) {
+        setError('No server response');
+      } else if (err.response?.status === 400) {
+        setError('Invalid email or password.');
+      } else if (err.response?.status === 401) {
+        setError('Unauthorized');
+      } else {
+        setError('Something went wrong. Please try again later.');
+      }
+    }
   };
 
   return (
@@ -26,29 +50,20 @@ function RegisterPage() {
       <h1>Register Account</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          First Name:
-          <input
-            type='text'
-            name='firstName'
-            value={formData.firstName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Last Name:
-          <input
-            type='text'
-            name='lastName'
-            value={formData.lastName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
           Email:
           <input
-            type='email'
+            type='text'
             name='email'
             value={formData.email}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Name:
+          <input
+            type='text'
+            name='name'
+            value={formData.name}
             onChange={handleInputChange}
           />
         </label>
