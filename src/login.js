@@ -36,20 +36,25 @@ export const LoginPage = () => {
         password: password
        }
       });
-      console.log(JSON.stringify(response?.data));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setUser({ email, password, accessToken });
-      console.log(email, password);
-      setEmail('');
-      setPassword('');
-      setLoggedIn(true);
+      if(response.data === true)
+      {
+        console.log(JSON.stringify(response?.data));
+        const accessToken = response?.data?.accessToken;
+        const roles = response?.data?.roles;
+        setUser({ email, password, accessToken });
+        console.log(email, password);
+        setEmail('');
+        setPassword('');
+        setLoggedIn(true);
+      }
+      
+
     } catch (err) {
       if (!err?.response) {
         setError('No server response');
-      } else if (err.response?.statuse == 400) {
+      } else if (err.response?.statuse === 400) {
         setError('Invalid email or password.');
-      } else if (err.response?.status == 401) {
+      } else if (err.response?.status === 401) {
         setError('Unauthorized');
       } else {
         setError('Something went wrong. Please try again later.');
