@@ -1,0 +1,48 @@
+/** @format */
+.login-form-container {
+    width: 70rem;
+  }
+  .login-page-container {
+    height: 67.5rem;
+  }
+  .AppHarvest-logo-style {
+    height: 7rem;
+    width: 7rem;
+  }
+  .image-background-color {
+    background-color: #000;
+  }
+  .image-styling {
+    opacity: 0.9;
+  }
+  .text-position {
+    top: 4rem;
+  }
+  .login-inputs-container {
+    border-style: solid;
+    border-radius: 3.125rem;
+    border-color: #00ac50;
+    border-width: 3px;
+    width: 550px;
+    height: 660px;
+  }
+  .input-style {
+    border: 0;
+    padding-left: 1rem;
+    width: 27.5rem;
+    border-bottom: 2px solid #000;
+  }
+  .right-arrow-style {
+    height: 2rem;
+    width: 2rem;
+  }
+  .login-button-style {
+    background-color: #fff;
+    border-radius: 3.125rem;
+    border-color: #00ac50;
+    border-width: 3px;
+    width: 420px;
+    height: 75px;
+    font-size: 2.5rem;
+    color: #00ac50;
+  }
