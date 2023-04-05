@@ -32,6 +32,18 @@
   width: 27.5rem;
   border-bottom: 2px solid #000;
 }
+.input-style-email {
+  background-image: url('../public/envelope-solid\(1\).svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 1rem;
+}
+.input-style-password {
+  background-image: url('../public/lock-solid.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 1rem;
+}
 .right-arrow-style {
   height: 2rem;
   width: 2rem;
@@ -47,17 +59,11 @@
   color: #00ac50;
 }
 
-
-@media (min-width: 992px) { 
-  
+@media (min-width: 992px) {
 }
-
 
 @media (min-width: 1200px) {
-
 }
 
-
 @media (min-width: 1400px) {
-
 }
