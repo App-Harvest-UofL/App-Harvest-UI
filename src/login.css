@@ -44,18 +44,6 @@
   background-position: right center;
   background-size: 1rem;
 }
-.input-style-email {
-  background-image: url('../public/envelope-solid\(1\).svg');
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 1rem;
-}
-.input-style-password {
-  background-image: url('../public/lock-solid.svg');
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 1rem;
-}
 .right-arrow-style {
   height: 2rem;
   width: 2rem;

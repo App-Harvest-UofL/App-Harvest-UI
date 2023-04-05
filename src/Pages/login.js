@@ -84,7 +84,6 @@ const LoginPage = () => {
                 <div className='d-flex justify-content-center'>
                   <input
                     className='input-style input-style-email mt-2 mb-2'
-                    className='input-style input-style-email mt-2 mb-2'
                     type='email'
                     placeholder='email'
                     ref={emailRef}
@@ -92,11 +91,9 @@ const LoginPage = () => {
                     value={email}
                     required
                   />
-                  />
                 </div>
                 <div className='d-flex justify-content-center'>
                   <input
-                    className='input-style input-style-password mt-2 mb-2'
                     className='input-style input-style-password mt-2 mb-2'
                     type='password'
                     placeholder='password'
@@ -104,11 +101,6 @@ const LoginPage = () => {
                     value={password}
                     required
                   ></input>
-                </div>
-                <div className='d-flex w-100 justify-content-center'>
-                  <a classname='' href='/'>
-                    Reset Password
-                  </a>
                 </div>
                 <div className='d-flex w-100 justify-content-center'>
                   <a classname='' href='/'>
