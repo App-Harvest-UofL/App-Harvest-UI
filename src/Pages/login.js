@@ -3,7 +3,7 @@ import '../login.css';
 import { useState, useRef, useEffect, useContext } from 'react';
 import AuthContext from '../context/AuthProvider';
 import axios from '../API Pull/axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const { setUser } = useContext(AuthContext);
@@ -113,18 +113,13 @@ const LoginPage = () => {
                       />
                     </span>
                   </button>
-                  <button className='login-button-style' type='submit'>
-                    Register
-                    <span className='ms-5'>
-                      <img
-                        className='right-arrow-style'
-                        src='arrow-right-solid.svg'
-                        alt='right arrow shaped image'
-                      />
-                    </span>
-                  </button>
                 </div>
               </form>
+              <div className='d-flex w-100 justify-content-center'>
+              <p>
+                    Don't have an account? <Link className='register-link-style' to='/registerPage'>Create one</Link>
+              </p>
+              </div>
             </div>
           </div>
           <div className='image-background-color'>
