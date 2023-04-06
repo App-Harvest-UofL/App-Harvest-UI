@@ -103,9 +103,9 @@ const LoginPage = () => {
                   ></input>
                 </div>
                 <div className='d-flex w-100 justify-content-center'>
-                  <a classname='' href='/'>
-                    Reset Password
-                  </a>
+                <p>
+                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
+                </p>
                 </div>
                 <div className='d-flex justify-content-center'>
                   <button className='login-button-style' type='submit'>
@@ -127,16 +127,6 @@ const LoginPage = () => {
                     Create one
                   </Link>
                 </p>
-              </div>
-              <div className='d-flex w-100 justify-content-center'>
-              <p>
-                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
-              </p>
-              </div>
-              <div className='d-flex w-100 justify-content-center'>
-              <p>
-                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
-              </p>
               </div>
             </div>
           </div>
