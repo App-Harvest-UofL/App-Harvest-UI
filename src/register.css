@@ -1,7 +1,11 @@
 /** @format */
-.login-form-container {
-    width: 70rem;
+.register-form-container {
+    width: 79rem;
   }
+  .register-first-last-container {
+    width: 79rem;
+  }
+
   .login-page-container {
     height: 67.5rem;
   }
@@ -18,18 +22,30 @@
   .text-position {
     top: 4rem;
   }
-  .login-inputs-container {
+  .register-inputs-container {
     border-style: solid;
     border-radius: 3.125rem;
     border-color: #00ac50;
     border-width: 3px;
-    width: 550px;
+    width: 600px;
     height: 660px;
+    padding: 3rem;
   }
   .input-style {
     border: 0;
-    padding-left: 1rem;
-    width: 27.5rem;
+    width: 30.75rem;
+    border-bottom: 2px solid #000;
+  }
+  .firstname-input-style {
+    border: 0;
+    width: 15rem;
+    border-bottom: 2px solid #000;
+    margin-right: .75rem;
+
+  }
+  .lastname-input-style {
+    border: 0;
+    width: 15rem;
     border-bottom: 2px solid #000;
   }
   .right-arrow-style {

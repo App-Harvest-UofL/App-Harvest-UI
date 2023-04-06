@@ -78,7 +78,7 @@ const LoginPage = () => {
                 <p ref={errorRef} className='' aria-live='assertive'>
                   {error}
                 </p>
-                <h1>Welcome Back</h1>
+                <h1>Welcome Back!</h1>
               </div>
               <form onSubmit={handleSubmit}>
                 <div className='d-flex justify-content-center'>
@@ -127,6 +127,16 @@ const LoginPage = () => {
                     Create one
                   </Link>
                 </p>
+              </div>
+              <div className='d-flex w-100 justify-content-center'>
+              <p>
+                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
+              </p>
+              </div>
+              <div className='d-flex w-100 justify-content-center'>
+              <p>
+                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
+              </p>
               </div>
             </div>
           </div>
