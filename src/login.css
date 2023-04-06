@@ -64,7 +64,9 @@
 .register-link-style {
   color: #00ac50;
 }
-
+.forgot-password-link-style {
+  color: #00ac50
+}
 @media (min-width: 992px) { 
   
 }

@@ -133,6 +133,11 @@ const LoginPage = () => {
                     Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
               </p>
               </div>
+              <div className='d-flex w-100 justify-content-center'>
+              <p>
+                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
+              </p>
+              </div>
             </div>
           </div>
           <div className='image-background-color'>
