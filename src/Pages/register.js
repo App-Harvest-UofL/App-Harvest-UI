@@ -15,6 +15,7 @@ function RegisterPage() {
     password: '',
     confirmPassword: '',
   });
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
 
   const [error, setError] = useState('');
   const [userCreated, setUserCreated] = useState(false);
@@ -26,6 +27,10 @@ function RegisterPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      setPasswordsMatch(false);
+      return;
+    }
     try {
       const response = await axios({
         method: 'post',
@@ -124,14 +129,17 @@ function RegisterPage() {
                 <label>Confirm Password</label>
                   <input
                     className='input-style mt-2 mb-2'
-                    type='confirmPassword'
+                    type='password'
                     name='confirmPassword'
-                    value={formData.password}
+                    value={formData.confirmPassword}
                     onChange={handleInputChange}
                     required
                   ></input>
                   </div>
                   </div>
+                <div className='d-flex justify-content-center'>
+                  {!passwordsMatch && <p>Passwords do not match.</p>}
+                </div>
                 <div className='d-flex justify-content-center'>
                   <button className='login-button-style' type='submit'>
                     Register
