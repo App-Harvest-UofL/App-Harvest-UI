@@ -1,11 +1,21 @@
-/** @format */
-
 import React, { useState } from "react";
+import axios from "axios";
 
 const ContentPage = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
 
-  const handleFileUpload = (event) => {
+  const handleFileUpload = async (event) => {
+    try {
+      const formData = new FormData();
+      for (let i = 0; i < event.target.files.length; i++) {
+        formData.append("file", event.target.files[i]);
+      }
+
+      const response = await axios.post("http://localhost:5164/FileUpload/", formData);
+      console.log(response.data); // Handle successful response
+    } catch (error) {
+      console.error("Error:", error); // Handle error
+    }
     setSelectedFiles(event.target.files);
   };
 
