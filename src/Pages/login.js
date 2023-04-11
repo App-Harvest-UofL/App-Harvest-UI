@@ -1,5 +1,5 @@
 /** @format */
-import '../login.css';
+import '../Styling/login.css';
 import { useState, useRef, useEffect, useContext } from 'react';
 import AuthContext from '../context/AuthProvider';
 import axios from '../API Pull/axios';
@@ -103,9 +103,15 @@ const LoginPage = () => {
                   ></input>
                 </div>
                 <div className='d-flex w-100 justify-content-center'>
-                <p>
-                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
-                </p>
+                  <p>
+                    Forgot password?{' '}
+                    <Link
+                      className='forgot-password-link-style'
+                      to='/forgotPasswordPage'
+                    >
+                      Reset password
+                    </Link>
+                  </p>
                 </div>
                 <div className='d-flex justify-content-center'>
                   <button className='login-button-style' type='submit'>
