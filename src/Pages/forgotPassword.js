@@ -1,9 +1,9 @@
 /** @format */
-import '../login.css';
-import '../register.css';
+import '../Styling/login.css';
+import '../Styling/register.css';
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 function ForgotPasswordPage() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -13,12 +13,11 @@ function ForgotPasswordPage() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    Navigate("/");
+    Navigate('/');
     // handle registration logic here
   };
 
@@ -39,20 +38,22 @@ function ForgotPasswordPage() {
                 <h1>We're here to help!</h1>
               </div>
               <div className='d-flex w-100 justify-content-center'>
-                <h6>We'll send you instructions on how to reset your password</h6>
+                <h6>
+                  We'll send you instructions on how to reset your password
+                </h6>
               </div>
               <form onSubmit={handleSubmit}>
-              <div className='d-flex justify-content-center'>
+                <div className='d-flex justify-content-center'>
                   <div className='d-flex flex-column label-input-center'>
                     <label>Email</label>
-                      <input
-                        className='input-style mt-2 mb-2'
-                        type='email'
-                        name='email'
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                      ></input>
+                    <input
+                      className='input-style mt-2 mb-2'
+                      type='email'
+                      name='email'
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                    ></input>
                   </div>
                 </div>
                 <div className='d-flex justify-content-center'>
