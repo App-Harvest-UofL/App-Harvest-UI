@@ -6,9 +6,9 @@
     width: 79rem;
   }
 
-  .login-page-container {
+  /* .login-page-container {
     height: 67.5rem;
-  }
+  } */
   .AppHarvest-logo-style {
     height: 7rem;
     width: 7rem;
@@ -54,13 +54,13 @@
     height: 2rem;
     width: 2rem;
   }
-  .login-button-style {
+  /* .login-button-style {
     background-color: #fff;
     border-radius: 3.125rem;
     border-color: #00ac50;
     border-width: 3px;
-    width: 420px;
-    height: 75px;
+    width: 80%;
+    height: 25%;
     font-size: 2.5rem;
     color: #00ac50;
-  }
+  } */
