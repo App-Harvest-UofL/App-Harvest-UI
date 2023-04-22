@@ -10,7 +10,8 @@ function RegisterPage() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
-    name: '',
+    firstName: '',
+    lastName: '',
     content: '',
     password: '',
     confirmPassword: '',
@@ -37,11 +38,15 @@ function RegisterPage() {
         url:'/About/CreateUser',
         data: {
           email: formData.email,
-          name: formData.name,
+          name: formData.firstName + ' ' + formData.lastName,
           ContentCodes: "basic",
           password: formData.password
         }
       })
+      if(response.status === 200)
+      {
+        setUserCreated(true);
+      }
     }catch (err) {
       if (!err?.response) {
         setError('No server response');
@@ -57,7 +62,9 @@ function RegisterPage() {
 
   return (
     <>
-      {
+      {userCreated ? (
+        navigate('/contentPage')
+      ) : (
         <div className='d-flex flex-row login-page-container'>
           <div className='register-form-container d-flex flex-column'>
             <div className=''>
@@ -168,7 +175,7 @@ function RegisterPage() {
             ></img>
           </div>
         </div>
-      }
+      )}
     </>
     /*
     <div>
