@@ -4,12 +4,11 @@ import '../register.css';
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom'
+import axios from '../API Pull/axios';
 function ForgotPasswordPage() {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    email: ''
-  });
+  const [email, setEmail] = useState('');
   const [submittedStatus, setSubmittedStatus] = useState(false);
   const [newPassword, setNewPassword] = useState('');
   const [newPasswordConfirm, setNewPasswordConfirm] = useState('');
@@ -20,12 +19,31 @@ function ForgotPasswordPage() {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  const handleSubmitEmail = (event) => {
+  const handleSubmitEmail = async (event) => {
     event.preventDefault();
     //Server Call to check if email is valid before setting submitted status to true goes here
-    setSubmittedStatus(() => (true));
-  };
 
+    try {
+      const emailResponse = await axios.get('http://localhost:5164/About/GetUser/', {params: {email}}, );
+      if(emailResponse.status === 200)
+      {
+        
+      }
+
+      setSubmittedStatus(() => (true));
+    }
+    catch (err) {
+      if (!err?.response) {
+        setError('No server response');
+      } else if (err.response?.statuse === 400) {
+        setError('Invalid email or password.');
+      } else if (err.response?.status === 401) {
+        setError('Unauthorized');
+      } else {
+        setError('Something went wrong. Please try again later.');
+      }
+    }
+  };
   const handlePasswordInputChange = (event) => {
     const { name, value } = event.target;
     if (name === 'password') {
@@ -45,7 +63,6 @@ function ForgotPasswordPage() {
     }
   }
 
-
   const handleSubmitPassword = (event) => {
     event.preventDefault();
     //Server Call to actually change the password goes here
@@ -53,9 +70,13 @@ function ForgotPasswordPage() {
     navigate('/');
   };
 
+
+
   return (
     <>
-      {
+      { submittedStatus ? (
+        navigate('/contentPage')
+      ) : (
         <div className='d-flex flex-row login-page-container'>
           <div className='register-form-container d-flex flex-column'>
             <div className=''>
@@ -83,7 +104,7 @@ function ForgotPasswordPage() {
                         type='email'
                         name='email'
                         placeholder='Email'
-                        value={formData.email}
+                        value={setEmail}
                         onChange={handleInputChange}
                         required
                       ></input>
@@ -157,7 +178,7 @@ function ForgotPasswordPage() {
             ></img>
           </div>
         </div>
-      }
+      )}
     </>
   );
 }
