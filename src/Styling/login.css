@@ -35,9 +35,13 @@
 }
 .input-style {
   border: 0;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   width: 27.5rem;
   border-bottom: 2px solid #000;
+}
+.email-input-container {
+  padding-bottom: 1.5rem;
+  padding-top: 2rem;
 }
 .input-style-email {
   background-image: url('C:\Users\colli\appharvest-ui\public\envelope-solid(1).svg');
@@ -51,10 +55,18 @@
   background-position: right center;
   background-size: 1rem;
 }
+.forgot-password-container {
+  padding-bottom: 1.5rem;
+}
 .right-arrow-style {
   height: 2rem;
   width: 2rem;
 }
+
+input:focus {
+  outline: none;
+}
+
 .login-button-style {
   background-color: #fff;
   border-radius: 3.125rem;

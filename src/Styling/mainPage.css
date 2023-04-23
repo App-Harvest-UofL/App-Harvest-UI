@@ -1,0 +1,67 @@
+/** @format */
+.nav-div {
+  margin-top: 100px;
+}
+
+.background-color-left {
+  background-color: #000;
+}
+
+.background-color-right {
+  background-color: #a7a3a3;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.navbar-styling {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  border-bottom: #000 2px solid;
+}
+.AppHarvest-logo-style {
+  height: 3rem;
+  width: 3rem;
+  color: #00ac50;
+}
+.title-styling {
+  color: #00ac50;
+  font-size: 0.5rem;
+}
+.max-width-500px {
+  max-width: 500px;
+}
+
+.link-styling {
+  position: fixed;
+  right: 0;
+  padding-right: 3rem;
+}
+.link-color {
+  color: #00ac50;
+}
+.uploads-div-styling {
+  border: #000 1px solid;
+}
+.announcements-div-styling {
+  border: #000 1px solid;
+}
+.uploads-rectangle {
+  width: 600px;
+  height: 1000px;
+  background-color: #d3d3d3;
+  border-radius: 20px;
+}
+.announcements-rectangle {
+  width: 350px;
+  height: 1000px;
+  background-color: #d3d3d3;
+  border-radius: 20px;
+}

@@ -81,7 +81,7 @@ const LoginPage = () => {
                 <h1>Welcome Back!</h1>
               </div>
               <form onSubmit={handleSubmit}>
-                <div className='d-flex justify-content-center'>
+                <div className='d-flex justify-content-center email-input-container'>
                   <input
                     className='input-style input-style-email mt-2 mb-2'
                     type='email'
@@ -102,7 +102,7 @@ const LoginPage = () => {
                     required
                   ></input>
                 </div>
-                <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 justify-content-center forgot-password-container'>
                   <p>
                     Forgot password?{' '}
                     <Link
