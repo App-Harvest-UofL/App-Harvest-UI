@@ -4,7 +4,10 @@ import '../Styling/register.css';
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import axios from '../API Pull/axios';
+=======
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
 function ForgotPasswordPage() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
@@ -16,11 +19,16 @@ function ForgotPasswordPage() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+<<<<<<< HEAD
     setEmail((prevFormData) => ({ ...prevFormData, [name]: value }));
+=======
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
   };
 
   const handleSubmitEmail = async (event) => {
     event.preventDefault();
+<<<<<<< HEAD
     //Server Call to check if email is valid before setting submitted status to true goes here
 
     try {
@@ -68,6 +76,10 @@ function ForgotPasswordPage() {
     //Server Call to actually change the password goes here
     //Will need to navigate to either content page or back to login page after submitting (for now its login)
     navigate('/');
+=======
+    Navigate('/');
+    // handle registration logic here
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
   };
 
   return (
@@ -88,12 +100,32 @@ function ForgotPasswordPage() {
               <div className='d-flex w-100 justify-content-center'>
                 <h1>We're here to help!</h1>
               </div>
+<<<<<<< HEAD
               {!submittedStatus ? (
                 <>
                   <div className='d-flex w-100 justify-content-center'>
                     <h6>
                       We'll send you instructions on how to reset your password
                     </h6>
+=======
+              <div className='d-flex w-100 justify-content-center'>
+                <h6>
+                  We'll send you instructions on how to reset your password
+                </h6>
+              </div>
+              <form onSubmit={handleSubmit}>
+                <div className='d-flex justify-content-center'>
+                  <div className='d-flex flex-column label-input-center'>
+                    <label>Email</label>
+                    <input
+                      className='input-style mt-2 mb-2'
+                      type='email'
+                      name='email'
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                    ></input>
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
                   </div>
                   <form onSubmit={handleSubmitEmail}>
                     <div className='d-flex justify-content-center'>
