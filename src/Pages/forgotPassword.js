@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from '../API Pull/axios';
 function ForgotPasswordPage() {
   const navigate = useNavigate();
-
+  const [error, setError] = useState('');
   const [email, setEmail] = useState('');
   const [submittedStatus, setSubmittedStatus] = useState(false);
   const [newPassword, setNewPassword] = useState('');
@@ -16,7 +16,7 @@ function ForgotPasswordPage() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    setEmail((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
   const handleSubmitEmail = async (event) => {
