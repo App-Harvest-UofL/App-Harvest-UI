@@ -69,28 +69,30 @@ function RegisterPage() {
             </div>
             <div className='d-flex flex-column mt-5 register-inputs-container'>
               <div className='d-flex w-100 justify-content-center'>
-                <h1>We're glad you're here!</h1>
+                <h1 style={{textAlign:'center'}}>We're glad you're here!</h1>
               </div>
               <form onSubmit={handleSubmit}>
-              <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-row first-last-row'>
-                  <div className='d-flex flex-column label-input-center'>
+              <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-row first-last-row'>
+                  <div className='d-flex w-100 flex-column label-input-center'>
                     <label>First Name</label>
                       <input
-                        className='firstname-input-style mt-2 mb-2'
+                        className='input-style firstname-input-style mt-2 mb-2'
                         type='text'
                         name='firstName'
+                        placeholder='First Name'
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
                       ></input>
                   </div>
-                  <div className='d-flex flex-column label-input-center'>
+                  <div style={{marginLeft: '.5rem'}} className='d-flex w-100 flex-column label-input-center'>
                     <label>Last Name</label>
                       <input
-                        className='lastname-input-style mt-2 mb-2'
+                        className='input-style lastname-input-style mt-2 mb-2'
                         type='text'
                         name='lastName'
+                        placeholder='Last Name'
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
@@ -98,39 +100,42 @@ function RegisterPage() {
                   </div>
                   </div>
                 </div>
-                <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-column label-input-center'>
+                <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
                   <label>Email</label>
                     <input
-                      className='input-style mt-2 mb-2'
+                      className='input-style input-style-email w-100 mt-2 mb-2'
                       type='email'
                       name='email'
+                      placeholder='Email'
                       value={formData.email}
                       onChange={handleInputChange}
                       required
                     ></input>
                 </div>
                 </div>
-                <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-column label-input-center'>
+                <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
                 <label>Password</label>
                   <input
-                    className='input-style mt-2 mb-2'
+                    className='input-style input-style-password w-100 mt-2 mb-2'
                     type='password'
                     name='password'
+                    placeholder='Password'
                     value={formData.password}
                     onChange={handleInputChange}
                     required
                   ></input>
                 </div>
                 </div>
-                <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-column label-input-center'>
+                <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
                 <label>Confirm Password</label>
                   <input
-                    className='input-style mt-2 mb-2'
+                    className='input-style input-style-password w-100 mt-2 mb-2'
                     type='password'
                     name='confirmPassword'
+                    placeholder='Confirm Password'
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
                     required
@@ -140,7 +145,7 @@ function RegisterPage() {
                 <div className='d-flex justify-content-center'>
                   {!passwordsMatch && <p>Passwords do not match.</p>}
                 </div>
-                <div className='d-flex justify-content-center'>
+                <div style={{marginTop: '.5rem'}} className='d-flex justify-content-center'>
                   <button className='login-button-style' type='submit'>
                     Register
                     <span className='ms-5'>

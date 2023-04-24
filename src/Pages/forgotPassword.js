@@ -1,6 +1,6 @@
 /** @format */
 import '../login.css';
-import '../register.css';
+import '../forgotPassword.css';
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom'
@@ -56,8 +56,8 @@ function ForgotPasswordPage() {
   return (
     <>
       {
-        <div className='d-flex flex-row login-page-container'>
-          <div className='register-form-container d-flex flex-column'>
+        <div className='d-flex flex-row forgot-page-container'>
+          <div className='forgot-form-container d-flex flex-column'>
             <div className=''>
               <img
                 className='AppHarvest-logo-style d-flex w-100 mt-5 justify-content-center'
@@ -65,21 +65,21 @@ function ForgotPasswordPage() {
                 alt='AppHarvest logo in black'
               ></img>
             </div>
-            <div className='d-flex flex-column mt-5 register-inputs-container'>
+            <div className='d-flex flex-column mt-5 forgot-inputs-container'>
               <div className='d-flex w-100 justify-content-center'>
-                <h1>We're here to help!</h1>
+                <h1 style={{textAlign:'center'}}>We're here to help!</h1>
               </div>
               {!submittedStatus ? 
               <>
                 <div className='d-flex w-100 justify-content-center'>
-                  <h6>We'll send you instructions on how to reset your password</h6>
+                  <h6 style={{textAlign:'center'}}>We'll send you instructions on how to reset your password</h6>
                 </div>
                 <form onSubmit={handleSubmitEmail}>
-                <div className='d-flex justify-content-center'>
-                  <div className='d-flex flex-column label-input-center'>
+                <div className='d-flex w-100 justify-content-center'>
+                  <div className='d-flex w-100 flex-column label-input-center'>
                     <label>Email</label>
                       <input
-                        className='input-style input-style-email mt-2 mb-2'
+                        className='input-style w-100 input-style-email mt-2 mb-2'
                         type='email'
                         name='email'
                         placeholder='Email'
@@ -108,11 +108,11 @@ function ForgotPasswordPage() {
                 <h6>Please enter and confirm your new password.</h6>
               </div>
               <form onSubmit={handleSubmitPassword}>
-              <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-column label-input-center'>
+              <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
                   <label>Password</label>
                   <input
-                    className='input-style input-style-password mt-2 mb-2'
+                    className='input-style w-100 input-style-password mt-2 mb-2'
                     type='password'
                     name='password'
                     placeholder='Password'
@@ -122,7 +122,7 @@ function ForgotPasswordPage() {
                   ></input>
                   <label>Confirm Password</label>
                   <input
-                    className='input-style input-style-password mt-2 mb-2'
+                    className='input-style w-100 input-style-password mt-2 mb-2'
                     type='password'
                     name='confirmPassword'
                     placeholder='Confirm Password'
