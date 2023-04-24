@@ -19,27 +19,27 @@ const MainPage = () => {
         </div>
         <div className='link-styling'>
           <Link className='link-color' to='/contentPage'>
-            Upload
+            UPLOAD
           </Link>
         </div>
       </div>
       <div className='d-flex flex-row nav-div'>
         <div className='pt-4 pb-3 d-flex w-100 uploads-div-styling justify-content-center flex-column'>
           <div>
-            <p>
-              <u>UPLOADS</u>
-            </p>
+            <p>UPLOADS</p>
           </div>
-          <div className='uploads-rectangle'></div>
+          <div className='uploads-rectangle'>
+            <p className='p-2'></p>
+          </div>
         </div>
 
         <div className='pt-4 pb-3 d-flex w-100 max-width-500px announcements-div-styling justify-content-center flex-column'>
           <div>
-            <p>
-              <u>ANNOUNCEMENTS</u>
-            </p>
+            <p>ANNOUNCEMENTS</p>
           </div>
-          <div className='announcements-rectangle'></div>
+          <div className='announcements-rectangle'>
+            <p className='p-2'></p>
+          </div>
         </div>
       </div>
     </div>
