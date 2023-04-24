@@ -10,7 +10,8 @@ function RegisterPage() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
-    name: '',
+    firstName: '',
+    lastName: '',
     content: '',
     password: '',
     confirmPassword: '',
@@ -37,7 +38,7 @@ function RegisterPage() {
         url:'/About/CreateUser',
         data: {
           email: formData.email,
-          name: formData.name,
+          name: formData.firstName + ' ' + formData.lastName,
           ContentCodes: "basic",
           password: formData.password
         }
