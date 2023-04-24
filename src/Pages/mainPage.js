@@ -18,7 +18,9 @@ const MainPage = () => {
           <h1>AppHarvest Foundation</h1>
         </div>
         <div className='link-styling'>
-          <Link className='link-color'>Upload</Link>
+          <Link className='link-color' to='/contentPage'>
+            Upload
+          </Link>
         </div>
       </div>
       <div className='d-flex flex-row nav-div'>
