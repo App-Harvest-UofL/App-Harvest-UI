@@ -49,17 +49,34 @@ body {
 }
 .uploads-div-styling {
   border: #000 1px solid;
+  align-items: center;
 }
+
+.uploads-div-styling p{
+  text-align: center;
+}
+
 .announcements-div-styling {
   border: #000 1px solid;
+  align-items: center;
+}
+
+.announcements-div-styling p{
+  text-align: center;
 }
 .uploads-rectangle {
+  margin-left:3rem;
+  margin-right: 3rem;
+  margin-bottom: 4rem;
   width: 600px;
   height: 1000px;
   background-color: #d3d3d3;
   border-radius: 20px;
 }
 .announcements-rectangle {
+  margin-left:3rem;
+  margin-right: 3rem;
+  margin-bottom: 4rem;
   width: 350px;
   height: 1000px;
   background-color: #d3d3d3;

@@ -22,8 +22,8 @@ const MainPage = () => {
         </div>
       </div>
       <div className='d-flex flex-row nav-div'>
-        <div className='pt-4 pb-3 w-100 uploads-div-styling'>
-          <div className=''>
+        <div className='pt-4 pb-3 d-flex w-100 uploads-div-styling justify-content-center flex-column'>
+          <div>
             <p>
               <u>UPLOADS</u>
             </p>

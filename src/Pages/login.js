@@ -137,11 +137,16 @@ const LoginPage = () => {
             </div>
           </div>
           <div className='image-background-color'>
+            
             <img
               className='w-100 h-100 image-styling'
               src='AppHarvest-Foundation-image.jpg'
               alt='AppHarvest foundation crate image'
             ></img>
+            <div className="text-login-component">
+              <h1>AppHarvest Foundation</h1>
+              <p>Education and Access are the Response</p>
+            </div>
           </div>
         </div>
       )}
