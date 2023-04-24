@@ -138,6 +138,10 @@ function ForgotPasswordPage() {
             src='AppHarvest-Foundation-image.jpg'
             alt='AppHarvest foundation crate image'
           ></img>
+          <div class="text-login-component">
+              <h1>AppHarvest Foundation</h1>
+              <p>Education and Access are the Response</p>
+            </div>
         </div>
       </div>
         )}

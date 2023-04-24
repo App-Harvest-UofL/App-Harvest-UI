@@ -5,67 +5,87 @@
   align-items: center;
   height: 100%;
 }
-  .register-first-last-container {
-    width: 100%;
-  }
+.register-first-last-container {
+  width: 100%;
+}
 
-  /* .login-page-container {
-    height: 67.5rem;
-  } */
-  .AppHarvest-logo-style {
-    height: 7rem;
-    width: 7rem;
-  }
-  .image-background-color {
-    background-color: #000;
-  }
-  .image-styling {
-    opacity: 0.9;
-  }
-  .text-position {
-    top: 4rem;
-  }
-  .register-inputs-container {
-    border-style: solid;
-    border-radius: 3.125rem;
-    border-color: #00ac50;
-    border-width: 3px;
-    width: 80%;
-    height: 62%;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding: 1rem;
-  }
-  .input-style {
-    border: 0;
-    width: 30.75rem;
-    border-bottom: 2px solid #000;
-    outline: none;
-  }
-  .firstname-input-style {
-    border: 0;
-    width: 95%;
-    border-bottom: 2px solid #000;
-    margin-right: .75rem;
-    outline: none;
-  }
-  .lastname-input-style {
-    border: 0;
-    width: 95%;
-    border-bottom: 2px solid #000;
-    outline: none;
-  }
-  .right-arrow-style {
-    height: 2rem;
-    width: 2rem;
-  }
-  /* .login-button-style {
-    background-color: #fff;
-    border-radius: 3.125rem;
-    border-color: #00ac50;
-    border-width: 3px;
-    width: 80%;
-    height: 25%;
-    font-size: 2.5rem;
-    color: #00ac50;
-  } */
+
+.AppHarvest-logo-style {
+  height: 7rem;
+  width: 7rem;
+}
+.image-background-color {
+  background-color: #000;
+}
+.image-styling {
+  opacity: 0.9;
+}
+
+.text-login-component{
+  font-family: 'Times New Roman', Times, serif;
+  position: absolute;
+  color: white;
+  left: 45%;
+  top: 15%;
+  cursor: default; 
+}
+
+.text-login-component h1{
+  font-size: 3.5rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+}
+.text-login-component p{
+  font-size: 18px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.text-position {
+  top: 4rem;
+}
+.register-inputs-container {
+  border-style: solid;
+  border-radius: 3.125rem;
+  border-color: #00ac50;
+  border-width: 3px;
+  width: 80%;
+  height: 62%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 1rem;
+}
+.input-style {
+  border: 0;
+  width: 30.75rem;
+  border-bottom: 2px solid #000;
+  outline: none;
+}
+.firstname-input-style {
+  border: 0;
+  width: 95%;
+  border-bottom: 2px solid #000;
+  margin-right: .75rem;
+  outline: none;
+}
+.lastname-input-style {
+  border: 0;
+  width: 95%;
+  border-bottom: 2px solid #000;
+  outline: none;
+}
+.right-arrow-style {
+  height: 2rem;
+  width: 2rem;
+}
+/* .login-button-style {
+  background-color: #fff;
+  border-radius: 3.125rem;
+  border-color: #00ac50;
+  border-width: 3px;
+  width: 80%;
+  height: 25%;
+  font-size: 2.5rem;
+  color: #00ac50;
+} */

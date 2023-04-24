@@ -19,6 +19,30 @@
 .image-styling {
   opacity: 0.9;
 }
+
+.text-login-component{
+  font-family: 'Times New Roman', Times, serif;
+  position: absolute;
+  color: white;
+  left: 45%;
+  top: 15%;
+  cursor: default; 
+}
+
+.text-login-component h1{
+  font-size: 3.5rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  opacity: 1;
+
+}
+.text-login-component p{
+  font-size: 18px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+
 .text-position {
   top: 4rem;
 }
