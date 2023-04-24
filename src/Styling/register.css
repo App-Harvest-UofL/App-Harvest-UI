@@ -1,9 +1,12 @@
 /** @format */
 .register-form-container {
-    width: 79rem;
-  }
+  width: 40%;
+  min-width: 23rem;
+  align-items: center;
+  height: 100%;
+}
   .register-first-last-container {
-    width: 79rem;
+    width: 100%;
   }
 
   /* .login-page-container {
@@ -27,8 +30,8 @@
     border-radius: 3.125rem;
     border-color: #00ac50;
     border-width: 3px;
-    width: 600px;
-    height: 660px;
+    width: 80%;
+    height: 62%;
     margin-left: 1rem;
     margin-right: 1rem;
     padding: 1rem;
@@ -41,15 +44,16 @@
   }
   .firstname-input-style {
     border: 0;
-    width: 15rem;
+    width: 95%;
     border-bottom: 2px solid #000;
     margin-right: .75rem;
-
+    outline: none;
   }
   .lastname-input-style {
     border: 0;
-    width: 15rem;
+    width: 95%;
     border-bottom: 2px solid #000;
+    outline: none;
   }
   .right-arrow-style {
     height: 2rem;

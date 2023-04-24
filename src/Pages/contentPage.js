@@ -32,7 +32,7 @@ const ContentPage = () => {
     fileInputRef.current.click();
   };
   
-  const handleAnnouncementClick = () => {
+  const handleAnnouncementClick = async () => {
     console.log(`Sending announcement: ${announcement}`);
     if (selectedFiles.length > 0) {
       console.log(`Attached file: ${selectedFiles[0].name}`);
@@ -41,6 +41,14 @@ const ContentPage = () => {
       message: announcement,
       file: selectedFiles.length > 0 ? selectedFiles[0].name : null,
     };
+
+    const response = await axios({
+      method: 'post',
+      url: '/login', // come back and adjust this 
+      data: {
+        
+      },
+    });
     setAnnouncements([...announcements, newAnnouncement]);
     setSentAnnouncements([...sentAnnouncements, newAnnouncement]);
     setAnnouncement("");

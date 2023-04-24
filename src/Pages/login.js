@@ -81,37 +81,37 @@ const LoginPage = () => {
                 <h1>Welcome Back!</h1>
               </div>
               <form onSubmit={handleSubmit}>
-                <div className='d-flex justify-content-center email-input-container'>
-                  <input
-                    className='input-style input-style-email mt-2 mb-2'
+              <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
+                  <label>Email</label>
+                    <input
+                    className='input-style w-100 input-style-email mt-2 mb-2'
                     type='email'
-                    placeholder='email'
+                    placeholder='Email'
                     ref={emailRef}
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                     required
                   />
                 </div>
-                <div className='d-flex justify-content-center'>
-                  <input
-                    className='input-style input-style-password mt-2 mb-2'
+                </div>
+                <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
+                  <label>Password</label>
+                    <input
+                    className='input-style w-100 input-style-password mt-2 mb-2'
                     type='password'
-                    placeholder='password'
+                    placeholder='Password'
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                     required
                   ></input>
                 </div>
-                <div className='d-flex w-100 justify-content-center forgot-password-container'>
-                  <p>
-                    Forgot password?{' '}
-                    <Link
-                      className='forgot-password-link-style'
-                      to='/forgotPasswordPage'
-                    >
-                      Reset password
-                    </Link>
-                  </p>
+                </div>
+                <div className='d-flex w-100 justify-content-center'>
+                <p>
+                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
+                </p>
                 </div>
                 <div className='d-flex justify-content-center'>
                   <button className='login-button-style' type='submit'>
