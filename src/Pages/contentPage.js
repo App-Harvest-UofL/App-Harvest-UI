@@ -42,16 +42,16 @@ const ContentPage = () => {
       file: selectedFiles.length > 0 ? selectedFiles[0].name : null,
     };
 
-    const response = await axios({
-      method: 'post',
-      url: '/login', // come back and adjust this 
-      data: {
-        
-      },
-    });
     setAnnouncements([...announcements, newAnnouncement]);
     setSentAnnouncements([...sentAnnouncements, newAnnouncement]);
     setAnnouncement("");
+    // const response = await axios({
+    //   method: 'post',
+    //   url: '/login', // come back and adjust this 
+    //   data: {
+    //     content: announcement 
+    //   },
+    // });
   };
 
   const handleDeleteFile = () => {
