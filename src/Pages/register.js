@@ -37,21 +37,14 @@ function RegisterPage() {
         url: '/About/CreateUser',
         data: {
           email: formData.email,
-<<<<<<< HEAD
           name: formData.firstName + ' ' + formData.lastName,
-=======
-          name: formData.name,
->>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
           ContentCodes: 'basic',
           password: formData.password,
         },
       });
-<<<<<<< HEAD
       if (response.status === 200) {
         setUserCreated(true);
       }
-=======
->>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
     } catch (err) {
       if (!err?.response) {
         setError('No server response');
