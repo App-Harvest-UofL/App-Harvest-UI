@@ -1,5 +1,5 @@
 /** @format */
-import '../login.css';
+import '../Styling/login.css';
 import { useState, useRef, useEffect, useContext } from 'react';
 import AuthContext from '../context/AuthProvider';
 import axios from '../API Pull/axios';
@@ -81,7 +81,7 @@ const LoginPage = () => {
                 <h1>Welcome Back!</h1>
               </div>
               <form onSubmit={handleSubmit}>
-                <div className='d-flex justify-content-center'>
+                <div className='d-flex justify-content-center email-input-container'>
                   <input
                     className='input-style input-style-email mt-2 mb-2'
                     type='email'
@@ -102,10 +102,16 @@ const LoginPage = () => {
                     required
                   ></input>
                 </div>
-                <div className='d-flex w-100 justify-content-center'>
-                <p>
-                    Forgot password? <Link className='forgot-password-link-style' to='/forgotPasswordPage'>Reset password</Link>
-                </p>
+                <div className='d-flex w-100 justify-content-center forgot-password-container'>
+                  <p>
+                    Forgot password?{' '}
+                    <Link
+                      className='forgot-password-link-style'
+                      to='/forgotPasswordPage'
+                    >
+                      Reset password
+                    </Link>
+                  </p>
                 </div>
                 <div className='d-flex justify-content-center'>
                   <button className='login-button-style' type='submit'>

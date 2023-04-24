@@ -1,11 +1,11 @@
 /** @format */
-import '../login.css';
-import '../register.css';
+import '../Styling/login.css';
+import '../Styling/register.css';
 import React, { useState } from 'react';
 import axios from '../API Pull/axios';
 
 import { Navigate } from 'react-router-dom';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 function RegisterPage() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -23,7 +23,6 @@ function RegisterPage() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-
   };
 
   const handleSubmit = async (event) => {
@@ -35,19 +34,25 @@ function RegisterPage() {
     try {
       const response = await axios({
         method: 'post',
-        url:'/About/CreateUser',
+        url: '/About/CreateUser',
         data: {
           email: formData.email,
+<<<<<<< HEAD
           name: formData.firstName + ' ' + formData.lastName,
-          ContentCodes: "basic",
-          password: formData.password
-        }
-      })
-      if(response.status === 200)
-      {
+=======
+          name: formData.name,
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
+          ContentCodes: 'basic',
+          password: formData.password,
+        },
+      });
+<<<<<<< HEAD
+      if (response.status === 200) {
         setUserCreated(true);
       }
-    }catch (err) {
+=======
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
+    } catch (err) {
       if (!err?.response) {
         setError('No server response');
       } else if (err.response?.status === 400) {
@@ -79,10 +84,10 @@ function RegisterPage() {
                 <h1>We're glad you're here!</h1>
               </div>
               <form onSubmit={handleSubmit}>
-              <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-row first-last-row'>
-                  <div className='d-flex flex-column label-input-center'>
-                    <label>First Name</label>
+                <div className='d-flex justify-content-center'>
+                  <div className='d-flex flex-row first-last-row'>
+                    <div className='d-flex flex-column label-input-center'>
+                      <label>First Name</label>
                       <input
                         className='firstname-input-style mt-2 mb-2'
                         type='text'
@@ -91,9 +96,9 @@ function RegisterPage() {
                         onChange={handleInputChange}
                         required
                       ></input>
-                  </div>
-                  <div className='d-flex flex-column label-input-center'>
-                    <label>Last Name</label>
+                    </div>
+                    <div className='d-flex flex-column label-input-center'>
+                      <label>Last Name</label>
                       <input
                         className='lastname-input-style mt-2 mb-2'
                         type='text'
@@ -102,12 +107,12 @@ function RegisterPage() {
                         onChange={handleInputChange}
                         required
                       ></input>
-                  </div>
+                    </div>
                   </div>
                 </div>
                 <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-column label-input-center'>
-                  <label>Email</label>
+                  <div className='d-flex flex-column label-input-center'>
+                    <label>Email</label>
                     <input
                       className='input-style mt-2 mb-2'
                       type='email'
@@ -116,34 +121,34 @@ function RegisterPage() {
                       onChange={handleInputChange}
                       required
                     ></input>
-                </div>
+                  </div>
                 </div>
                 <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-column label-input-center'>
-                <label>Password</label>
-                  <input
-                    className='input-style mt-2 mb-2'
-                    type='password'
-                    name='password'
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    required
-                  ></input>
-                </div>
+                  <div className='d-flex flex-column label-input-center'>
+                    <label>Password</label>
+                    <input
+                      className='input-style mt-2 mb-2'
+                      type='password'
+                      name='password'
+                      value={formData.password}
+                      onChange={handleInputChange}
+                      required
+                    ></input>
+                  </div>
                 </div>
                 <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-column label-input-center'>
-                <label>Confirm Password</label>
-                  <input
-                    className='input-style mt-2 mb-2'
-                    type='password'
-                    name='confirmPassword'
-                    value={formData.confirmPassword}
-                    onChange={handleInputChange}
-                    required
-                  ></input>
+                  <div className='d-flex flex-column label-input-center'>
+                    <label>Confirm Password</label>
+                    <input
+                      className='input-style mt-2 mb-2'
+                      type='password'
+                      name='confirmPassword'
+                      value={formData.confirmPassword}
+                      onChange={handleInputChange}
+                      required
+                    ></input>
                   </div>
-                  </div>
+                </div>
                 <div className='d-flex justify-content-center'>
                   {!passwordsMatch && <p>Passwords do not match.</p>}
                 </div>
@@ -161,9 +166,12 @@ function RegisterPage() {
                 </div>
               </form>
               <div className='d-flex w-100 justify-content-center'>
-              <p>
-                    Already have an account? <Link className='register-link-style' to='/'>Log in</Link>
-              </p>
+                <p>
+                  Already have an account?{' '}
+                  <Link className='register-link-style' to='/'>
+                    Log in
+                  </Link>
+                </p>
               </div>
             </div>
           </div>

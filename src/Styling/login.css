@@ -1,15 +1,13 @@
 /** @format */
 .login-form-container {
   width: 40%;
-  
+
   min-width: 23rem;
   align-items: center;
   height: 100%;
- 
 }
 .login-page-container {
-  height:49rem;
-  
+  height: 49rem;
 }
 .AppHarvest-logo-style {
   height: 7rem;
@@ -37,26 +35,38 @@
 }
 .input-style {
   border: 0;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   width: 27.5rem;
   border-bottom: 2px solid #000;
 }
+.email-input-container {
+  padding-bottom: 1.5rem;
+  padding-top: 2rem;
+}
 .input-style-email {
-  background-image: url('../public/envelope-solid\(1\).svg');
+  background-image: url('C:\Users\colli\appharvest-ui\public\envelope-solid(1).svg');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 1rem;
 }
 .input-style-password {
-  background-image: url('../public/lock-solid.svg');
+  background-image: url('C:\Users\colli\appharvest-ui\public\lock-solid.svg');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 1rem;
+}
+.forgot-password-container {
+  padding-bottom: 1.5rem;
 }
 .right-arrow-style {
   height: 2rem;
   width: 2rem;
 }
+
+input:focus {
+  outline: none;
+}
+
 .login-button-style {
   background-color: #fff;
   border-radius: 3.125rem;
@@ -81,30 +91,30 @@
   color: #00ac50;
 }
 .forgot-password-link-style {
-  color: #00ac50
+  color: #00ac50;
+}
+a:hover {
+  color: #000;
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   .login-form-container {
     width: 35%;
     height: 100%;
     min-width: 25rem;
   }
-  
 }
 
 @media (min-width: 1200px) {
-
-.login-form-container {
-  width: 35%;
-  height: 100%;
+  .login-form-container {
+    width: 35%;
+    height: 100%;
   }
 }
 
 @media (min-width: 1400px) {
-  
   .login-form-container {
     width: 35%;
     height: 100%;
-    }
+  }
 }

@@ -1,10 +1,13 @@
 /** @format */
-import '../login.css';
-import '../register.css';
+import '../Styling/login.css';
+import '../Styling/register.css';
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import axios from '../API Pull/axios';
+=======
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
 function ForgotPasswordPage() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
@@ -16,23 +19,28 @@ function ForgotPasswordPage() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+<<<<<<< HEAD
     setEmail((prevFormData) => ({ ...prevFormData, [name]: value }));
+=======
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
   };
 
   const handleSubmitEmail = async (event) => {
     event.preventDefault();
+<<<<<<< HEAD
     //Server Call to check if email is valid before setting submitted status to true goes here
 
     try {
-      const emailResponse = await axios.get('http://localhost:5164/About/GetUser/', {params: {email}}, );
-      if(emailResponse.status === 200)
-      {
-        
+      const emailResponse = await axios.get(
+        'http://localhost:5164/About/GetUser/',
+        { params: { email } }
+      );
+      if (emailResponse.status === 200) {
       }
 
-      setSubmittedStatus(() => (true));
-    }
-    catch (err) {
+      setSubmittedStatus(() => true);
+    } catch (err) {
       if (!err?.response) {
         setError('No server response');
       } else if (err.response?.statuse === 400) {
@@ -61,20 +69,22 @@ function ForgotPasswordPage() {
         setPasswordError('');
       }
     }
-  }
+  };
 
   const handleSubmitPassword = (event) => {
     event.preventDefault();
     //Server Call to actually change the password goes here
     //Will need to navigate to either content page or back to login page after submitting (for now its login)
     navigate('/');
+=======
+    Navigate('/');
+    // handle registration logic here
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
   };
-
-
 
   return (
     <>
-      { submittedStatus ? (
+      {submittedStatus ? (
         navigate('/contentPage')
       ) : (
         <div className='d-flex flex-row login-page-container'>
@@ -90,85 +100,118 @@ function ForgotPasswordPage() {
               <div className='d-flex w-100 justify-content-center'>
                 <h1>We're here to help!</h1>
               </div>
-              {!submittedStatus ? 
-              <>
-                <div className='d-flex w-100 justify-content-center'>
-                  <h6>We'll send you instructions on how to reset your password</h6>
-                </div>
-                <form onSubmit={handleSubmitEmail}>
+<<<<<<< HEAD
+              {!submittedStatus ? (
+                <>
+                  <div className='d-flex w-100 justify-content-center'>
+                    <h6>
+                      We'll send you instructions on how to reset your password
+                    </h6>
+=======
+              <div className='d-flex w-100 justify-content-center'>
+                <h6>
+                  We'll send you instructions on how to reset your password
+                </h6>
+              </div>
+              <form onSubmit={handleSubmit}>
                 <div className='d-flex justify-content-center'>
                   <div className='d-flex flex-column label-input-center'>
                     <label>Email</label>
-                      <input
-                        className='input-style input-style-email mt-2 mb-2'
-                        type='email'
-                        name='email'
-                        placeholder='Email'
-                        value={setEmail}
-                        onChange={handleInputChange}
-                        required
-                      ></input>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-center'>
-                  <button className='login-button-style' type='submit'>
-                    Send
-                    <span className='ms-5'>
-                      <img
-                        className='right-arrow-style'
-                        src='arrow-right-solid.svg'
-                        alt='right arrow shaped image'
-                      />
-                    </span>
-                  </button>
-                </div>
-              </form>
-            </> : 
-            <>
-              <div className='d-flex w-100 justify-content-center'>
-                <h6>Please enter and confirm your new password.</h6>
-              </div>
-              <form onSubmit={handleSubmitPassword}>
-              <div className='d-flex justify-content-center'>
-                <div className='d-flex flex-column label-input-center'>
-                  <label>Password</label>
-                  <input
-                    className='input-style input-style-password mt-2 mb-2'
-                    type='password'
-                    name='password'
-                    placeholder='Password'
-                    onChange={(e) => handlePasswordInputChange(e)}
-                    value={newPassword}
-                    required 
-                  ></input>
-                  <label>Confirm Password</label>
-                  <input
-                    className='input-style input-style-password mt-2 mb-2'
-                    type='password'
-                    name='confirmPassword'
-                    placeholder='Confirm Password'
-                    onChange={(e) => handlePasswordInputChange(e)}
-                    value={newPasswordConfirm}
-                    required 
+                    <input
+                      className='input-style mt-2 mb-2'
+                      type='email'
+                      name='email'
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                     ></input>
-                    {passwordError ? <label style={{color: 'red'}}>{passwordError}</label> : ""}
-                </div>
-              </div>
-              <div className='d-flex justify-content-center'>
-                <button disabled={passwordError} className='login-button-style' type='submit'>
-                  Update Password
-                  <span className='ms-5'>
-                    <img
-                      className='right-arrow-style'
-                      src='arrow-right-solid.svg'
-                      alt='right arrow shaped image'
-                    />
-                  </span>
-                </button>
-              </div>
-            </form>
-          </>}
-          </div>
+>>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
+                  </div>
+                  <form onSubmit={handleSubmitEmail}>
+                    <div className='d-flex justify-content-center'>
+                      <div className='d-flex flex-column label-input-center'>
+                        <label>Email</label>
+                        <input
+                          className='input-style mt-2 mb-2'
+                          type='email'
+                          name='email'
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                        ></input>
+                      </div>
+                    </div>
+                    <div className='d-flex justify-content-center'>
+                      <button className='login-button-style' type='submit'>
+                        Send
+                        <span className='ms-5'>
+                          <img
+                            className='right-arrow-style'
+                            src='arrow-right-solid.svg'
+                            alt='right arrow shaped image'
+                          />
+                        </span>
+                      </button>
+                    </div>
+                  </form>
+                </>
+              ) : (
+                <>
+                  <div className='d-flex w-100 justify-content-center'>
+                    <h6>Please enter and confirm your new password.</h6>
+                  </div>
+                  <form onSubmit={handleSubmitPassword}>
+                    <div className='d-flex justify-content-center'>
+                      <div className='d-flex flex-column label-input-center'>
+                        <label>Password</label>
+                        <input
+                          className='input-style input-style-password mt-2 mb-2'
+                          type='password'
+                          name='password'
+                          placeholder='Password'
+                          onChange={(e) => handlePasswordInputChange(e)}
+                          value={newPassword}
+                          required
+                        ></input>
+                        <label>Confirm Password</label>
+                        <input
+                          className='input-style input-style-password mt-2 mb-2'
+                          type='password'
+                          name='confirmPassword'
+                          placeholder='Confirm Password'
+                          onChange={(e) => handlePasswordInputChange(e)}
+                          value={newPasswordConfirm}
+                          required
+                        ></input>
+                        {passwordError ? (
+                          <label style={{ color: 'red' }}>
+                            {passwordError}
+                          </label>
+                        ) : (
+                          ''
+                        )}
+                      </div>
+                    </div>
+                    <div className='d-flex justify-content-center'>
+                      <button
+                        disabled={passwordError}
+                        className='login-button-style'
+                        type='submit'
+                      >
+                        Update Password
+                        <span className='ms-5'>
+                          <img
+                            className='right-arrow-style'
+                            src='arrow-right-solid.svg'
+                            alt='right arrow shaped image'
+                          />
+                        </span>
+                      </button>
+                    </div>
+                  </form>
+                </>
+              )}
+            </div>
           </div>
           <div className='image-background-color'>
             <img
