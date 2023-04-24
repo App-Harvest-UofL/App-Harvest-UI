@@ -58,12 +58,22 @@ body {
 }
 
 .announcements-div-styling {
+  background-image: url(https://media.agriinvestor.com/uploads/2021/02/AppHarvest-indoor.jpg);
   border: #000 1px solid;
   align-items: center;
+  opacity: 0.9;
 }
 
 .announcements-div-styling p {
   text-align: center;
+}
+
+.announcements-div-styling .announcements{
+  text-align: left;
+  margin-left: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  margin-top: 20px;
 }
 .uploads-rectangle {
   margin-left: 3rem;
@@ -72,10 +82,37 @@ body {
   width: 600px;
   height: 1000px;
   background-color: #e5e5e5;
-  border-radius: 20px;
   overflow-y: auto;
 }
+
+
+.file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  border: #000 0.5px solid;
+}
+
+.link {
+  margin-right: auto;
+}
+
+.name {
+  margin: 0 auto;
+}
+
+.user {
+  margin-left: auto;
+}
+
+
+
 .announcements-rectangle {
+  justify-content: flex-start;
   margin-left: 3rem;
   margin-right: 3rem;
   margin-bottom: 4rem;

@@ -1,9 +1,31 @@
 /** @format */
 import '../Styling/mainPage.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const MainPage = () => {
+  const [announcements, setAnnouncements] = useState([]);
+
+  const announcements_dummydata = [
+    {'Body': 'Welcome to AppHarvest Foundation'},
+    {'Body': 'Files will be coming soon...'},
+  ]
+
+  const files = [
+    {'link': '123.com', 'name': 'ExampleTest.pdf', 'uploadedBy': 'User', 'description': 'File Test 1'},
+    {'link': '123.com', 'name': 'ExtraFile.pdf', 'uploadedBy': 'User', 'description': 'Extra files for test'}
+  ]
+
+  useEffect(() => {
+    axios.get('your_api_endpoint_url')
+      .then(response => {
+        const extractedAnnouncements = response.data.map(obj => obj.Description);
+        setAnnouncements(extractedAnnouncements);
+      })
+      .catch(error => console.error(error));
+  }, []);
+
   return (
     <div>
       <div className='d-flex flex-row navbar-styling align-items-center w-100 ps-3'>
@@ -29,7 +51,19 @@ const MainPage = () => {
             <p>UPLOADS</p>
           </div>
           <div className='uploads-rectangle'>
-            <p className='p-2'></p>
+          <div className='file' >
+                  <span className="link" >Link</span>
+                  <span className="name">Description of File</span>
+                  <span className="user">Uploaded By</span>
+                </div>
+            <div>{files.map(file => (
+                <div className='file' >
+                  <a href="https://example.com">{file['name']}</a>
+                  <span className="name">{file['description']}</span>
+                  <span className="user">{file['uploadedBy']}</span>
+                </div>
+                ))}
+            </div>
           </div>
         </div>
 
@@ -38,7 +72,9 @@ const MainPage = () => {
             <p>ANNOUNCEMENTS</p>
           </div>
           <div className='announcements-rectangle'>
-            <p className='p-2'></p>
+            <div>{announcements_dummydata.map(announcement => (
+                <div className='announcements'>-{announcement['Body']}</div>))}
+            </div>
           </div>
         </div>
       </div>
