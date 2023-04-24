@@ -44,13 +44,13 @@
   padding-top: 2rem;
 }
 .input-style-email {
-  background-image: url('C:\Users\colli\appharvest-ui\public\envelope-solid(1).svg');
+  background-image: url('/public/envelope-solid\(1\).svg');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 1rem;
 }
 .input-style-password {
-  background-image: url('C:\Users\colli\appharvest-ui\public\lock-solid.svg');
+  background-image: url('/public/lock-solid.svg');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 1rem;

@@ -5,13 +5,12 @@ import React, { useState } from 'react';
 import axios from '../API Pull/axios';
 
 import { Navigate } from 'react-router-dom';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 function RegisterPage() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
-    firstName: '',
-    lastName: '',
+    name: '',
     content: '',
     password: '',
     confirmPassword: '',
@@ -23,6 +22,7 @@ function RegisterPage() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+
   };
 
   const handleSubmit = async (event) => {
@@ -34,25 +34,19 @@ function RegisterPage() {
     try {
       const response = await axios({
         method: 'post',
-        url: '/About/CreateUser',
+        url:'/About/CreateUser',
         data: {
           email: formData.email,
-<<<<<<< HEAD
-          name: formData.firstName + ' ' + formData.lastName,
-=======
           name: formData.name,
->>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
-          ContentCodes: 'basic',
-          password: formData.password,
-        },
-      });
-<<<<<<< HEAD
-      if (response.status === 200) {
+          ContentCodes: "basic",
+          password: formData.password
+        }
+      })
+      if (response.status === 200)
+      {
         setUserCreated(true);
       }
-=======
->>>>>>> 7ca4b46b870483392d4ea6e92c9987d1b2a48471
-    } catch (err) {
+    }catch (err) {
       if (!err?.response) {
         setError('No server response');
       } else if (err.response?.status === 400) {
@@ -81,78 +75,83 @@ function RegisterPage() {
             </div>
             <div className='d-flex flex-column mt-5 register-inputs-container'>
               <div className='d-flex w-100 justify-content-center'>
-                <h1>We're glad you're here!</h1>
+                <h1 style={{textAlign:'center'}}>We're glad you're here!</h1>
               </div>
               <form onSubmit={handleSubmit}>
-                <div className='d-flex justify-content-center'>
-                  <div className='d-flex flex-row first-last-row'>
-                    <div className='d-flex flex-column label-input-center'>
-                      <label>First Name</label>
+              <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-row first-last-row'>
+                  <div className='d-flex w-100 flex-column label-input-center'>
+                    <label>First Name</label>
                       <input
-                        className='firstname-input-style mt-2 mb-2'
+                        className='input-style firstname-input-style mt-2 mb-2'
                         type='text'
                         name='firstName'
+                        placeholder='First Name'
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
                       ></input>
-                    </div>
-                    <div className='d-flex flex-column label-input-center'>
-                      <label>Last Name</label>
+                  </div>
+                  <div style={{marginLeft: '.5rem'}} className='d-flex w-100 flex-column label-input-center'>
+                    <label>Last Name</label>
                       <input
-                        className='lastname-input-style mt-2 mb-2'
+                        className='input-style lastname-input-style mt-2 mb-2'
                         type='text'
                         name='lastName'
+                        placeholder='Last Name'
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
                       ></input>
-                    </div>
+                  </div>
                   </div>
                 </div>
-                <div className='d-flex justify-content-center'>
-                  <div className='d-flex flex-column label-input-center'>
-                    <label>Email</label>
+                <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
+                  <label>Email</label>
                     <input
-                      className='input-style mt-2 mb-2'
+                      className='input-style input-style-email w-100 mt-2 mb-2'
                       type='email'
                       name='email'
+                      placeholder='Email'
                       value={formData.email}
                       onChange={handleInputChange}
                       required
                     ></input>
-                  </div>
                 </div>
-                <div className='d-flex justify-content-center'>
-                  <div className='d-flex flex-column label-input-center'>
-                    <label>Password</label>
-                    <input
-                      className='input-style mt-2 mb-2'
-                      type='password'
-                      name='password'
-                      value={formData.password}
-                      onChange={handleInputChange}
-                      required
-                    ></input>
-                  </div>
                 </div>
-                <div className='d-flex justify-content-center'>
-                  <div className='d-flex flex-column label-input-center'>
-                    <label>Confirm Password</label>
-                    <input
-                      className='input-style mt-2 mb-2'
-                      type='password'
-                      name='confirmPassword'
-                      value={formData.confirmPassword}
-                      onChange={handleInputChange}
-                      required
-                    ></input>
-                  </div>
+                <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
+                <label>Password</label>
+                  <input
+                    className='input-style input-style-password w-100 mt-2 mb-2'
+                    type='password'
+                    name='password'
+                    placeholder='Password'
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    required
+                  ></input>
                 </div>
+                </div>
+                <div className='d-flex w-100 justify-content-center'>
+                <div className='d-flex w-100 flex-column label-input-center'>
+                <label>Confirm Password</label>
+                  <input
+                    className='input-style input-style-password w-100 mt-2 mb-2'
+                    type='password'
+                    name='confirmPassword'
+                    placeholder='Confirm Password'
+                    value={formData.confirmPassword}
+                    onChange={handleInputChange}
+                    required
+                  ></input>
+                  </div>
+                  </div>
                 <div className='d-flex justify-content-center'>
                   {!passwordsMatch && <p>Passwords do not match.</p>}
                 </div>
-                <div className='d-flex justify-content-center'>
+                <div style={{marginTop: '.5rem'}} className='d-flex justify-content-center'>
                   <button className='login-button-style' type='submit'>
                     Register
                     <span className='ms-5'>
@@ -166,12 +165,9 @@ function RegisterPage() {
                 </div>
               </form>
               <div className='d-flex w-100 justify-content-center'>
-                <p>
-                  Already have an account?{' '}
-                  <Link className='register-link-style' to='/'>
-                    Log in
-                  </Link>
-                </p>
+              <p>
+                    Already have an account? <Link className='register-link-style' to='/'>Log in</Link>
+              </p>
               </div>
             </div>
           </div>
@@ -229,7 +225,7 @@ function RegisterPage() {
       </form>
     </div>
     */
-  );
+   );
 }
 
 export default RegisterPage;
