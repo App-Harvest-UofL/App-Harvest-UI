@@ -1,5 +1,5 @@
 import React, { useState, useRef} from "react";
-import axios from "axios";
+import axios from '../API Pull/axios';
 import "../contentPage.css";
 
 const ContentPage = () => {
@@ -16,7 +16,7 @@ const ContentPage = () => {
         formData.append("file", event.target.files[i]);
       }
 
-      const response = await axios.post("http://localhost:5164/FileUpload/", formData);
+      const response = await axios.post("http://localhost:5164/Content/", formData);
       console.log(response.data); // Handle successful response
     } catch (error) {
       console.error("Error:", error); // Handle error
@@ -45,13 +45,13 @@ const ContentPage = () => {
     setAnnouncements([...announcements, newAnnouncement]);
     setSentAnnouncements([...sentAnnouncements, newAnnouncement]);
     setAnnouncement("");
-    // const response = await axios({
-    //   method: 'post',
-    //   url: '/login', // come back and adjust this 
-    //   data: {
-    //     content: announcement 
-    //   },
-    // });
+    const response = await axios({
+      method: 'post',
+      url: '/PostAnnoucnment', // come back and adjust this 
+      data: {
+        Body: announcement 
+      },
+    });
   };
 
   const handleDeleteFile = () => {
